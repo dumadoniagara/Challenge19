@@ -1,0 +1,23 @@
+{
+  "name": "challenge19",
+  "version": "1.0.0",
+  "description": "BREAD app using express,ejs, and data with json file",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "express",
+    "ejs",
+    "json",
+    "BREAD"
+  ],
+  "author": "Duma",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.2",
+    "express": "^4.17.1"
+  }
+}
