@@ -13,7 +13,9 @@ app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.get('/', (req, res) => res.render('index', { data }));
+app.get('/', (req, res) => {
+    res.render('index', { data });
+});
 app.get('/tambah', (req, res) => res.render('tambah'));
 
 app.post('/tambah', (req, res) => {
@@ -32,7 +34,7 @@ app.get('/delete/:id', (req, res) => {
 
 app.get('/edit/:id', (req, res) => {
     const id = req.params.id;
-    res.render('ganti', { item: { ...data[id]}, id  });
+    res.render('ganti', { item: { ...data[id] }, id });
 })
 
 app.post('/edit/:id', (req, res) => {
