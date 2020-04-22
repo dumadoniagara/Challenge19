@@ -1,15 +1,126 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
     <title>BREAD (Browse, Read, Edit, Add, Delete)</title>
 </head>
+
 <body>
-    <div class = "container mt-4">
-        <h2 style="text-align: center">WELCOME</h2>
+    <div class="container mt-4">
+        <h3 style="text-align: left">SEARCH YOUR DATA</h3><br>
+        <form method="GET">
+            <div class="row">
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="id">
+                        <label class="form-check-label" for="id">
+                            ID
+                        </label>
+                    </div>
+                </div>
+                <div class="col-10">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="id" placeholder="ID">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="string">
+                        <label class="form-check-label" for="string">
+                            String
+                        </label>
+                    </div>
+                </div>
+                <div class="col-10">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="string" placeholder="String">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="integer">
+                        <label class="form-check-label" for="integer">
+                            Integer
+                        </label>
+                    </div>
+                </div>
+                <div class="col-10">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="integer" placeholder="Integer">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="float">
+                        <label class="form-check-label" for="float">
+                            Float
+                        </label>
+                    </div>
+                </div>
+                <div class="col-10">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="float" placeholder="Float">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="date">
+                        <label class="form-check-label" for="date">
+                            Date
+                        </label>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="form-group">
+                        <input type="date" class="form-control" id="date">
+                    </div>
+                </div>
+                <div class="w-100"></div>
+                <p class="col offset-2">to</p>
+                <div class="w-100"></div>
+                <div class="col-3 offset-2">
+                    <div class="form-group">
+                        <input type="date" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="boolean">
+                        <label class="form-check-label" for="boolean">
+                            Boolean
+                        </label>
+                    </div>
+                </div>
+                <div class="col-10">
+                    <div class="form-group">
+                        <select class="custom-select custom-select">
+                            <option selected>Choose the boolean ...</option>
+                            <option value="true">true</option>
+                            <option value="false">false</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <button type="submit" class="btn btn-primary">Search</button>
+        <div class="container mt-4">
+            <h2 style="text-align: center">WELCOME</h2>
             <table class="table table-striped mt-4">
                 <thead>
                     <tr>
@@ -24,22 +135,22 @@
                 </thead>
                 <tbody>
                     <% data.forEach((item, index) => { %>
-                        <tr>
-                            <th scope="row"><%= index + 1 %></th>
-                            <td><%= item.string %></td>
-                            <td><%= item.integer %></td>
-                            <td><%= item.float %></td>
-                            <td><%= item.date %></td>
-                            <td><%= item.boolean %></td>
-                            <td>
-                                <a href="/edit/<%= index %>">
-                                    <button type="button" class="btn btn-success">Edit</button>
-                                </a>
-                                <a href="/delete/<%= index %>">
-                                    <button type="button" class="btn btn-danger">Delete</button>
-                                </a>
-                            </td>
-                        </tr>
+                    <tr>
+                        <th scope="row"><%= index + 1 %></th>
+                        <td><%= item.string %></td>
+                        <td><%= item.integer %></td>
+                        <td><%= item.float %></td>
+                        <td><%= item.date %></td>
+                        <td><%= item.boolean %></td>
+                        <td>
+                            <a href="/edit/<%= index %>">
+                                <button type="button" class="btn btn-success">Edit</button>
+                            </a>
+                            <a href="/delete/<%= index %>">
+                                <button type="button" class="btn btn-danger">Delete</button>
+                            </a>
+                        </td>
+                    </tr>
                     <% }) %>
                 </tbody>
             </table>
@@ -55,9 +166,6 @@
             <a href="/tambah">
                 <button type="button" class="btn btn-primary mb-4">Add</button>
             </a>
-            <a href="/filter">
-                <button type="button" class="btn btn-primary mb-4">Search</button>
-            </a>
         </div>
-    </body>
+</body>
 </html>
